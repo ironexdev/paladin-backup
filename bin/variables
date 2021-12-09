@@ -4,7 +4,7 @@
 export USER_ID=$(id -u)
 export GROUP_ID=$(id -u)
 
-# Devstack directory
+# Devstack
 export DEVSTACK_DIRECTORY=$(pwd)
 
 # Docker
@@ -16,8 +16,12 @@ export DOCKER_IMAGE_CONTEXT_PATH=docker/images # Used in Dockerfiles as relative
 # Backend
 export BACKEND_CONTEXT_PATH=backend # Used in Dockerfiles as relative path to the context (DEVSTACK_DIRECTORY)
 export BACKEND_DIRECTORY=${DEVSTACK_DIRECTORY}/${BACKEND_CONTEXT_PATH}
+export BACKEND_GENERATED_DIRECTORY=${BACKEND_DIRECTORY}/generated
+
+# Var
+export VAR_DIRECTORY=${DOCKER_DIRECTORY}/var
 
 # Logs
-export LOG_DIRECTORY=${DOCKER_DIRECTORY}/logs
+export LOG_DIRECTORY=${VAR_DIRECTORY}/logs
 export API_SERVER_LOG_DIRECTORY=${LOG_DIRECTORY}/api-server
 export HTTP_PROXY_LOG_DIRECTORY=${LOG_DIRECTORY}/http-proxy
