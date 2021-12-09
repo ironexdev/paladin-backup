@@ -4,19 +4,26 @@ This project is Work in Progress
 
 ## How to init development environment
 
-1) Init submodules
-- `bin/init`
+1) Create devstack folder (ie devstack-paladin) and run `git clone git@github.com:ironexdev/paladin.git` in it
 
-2) Add following to etc/hosts
+2) Init submodules
+- `bin/init`
+- Run from the devstack folder
+
+3) Add following to etc/hosts
 - `127.0.0.1 paladin.local`
 - `127.0.0.1 mongo.paladin.local`
 - `127.0.0.1 redis.paladin.local`
 
-3) Generate Secrets
+4) Generate Secrets
 - `bin/docker/compose/secrets`
+- This command will complain "No such file or directory", but files with secrets should be created anyway.
 
-4) Start Docker
+5Start Docker
 - `bin/docker/compose/up`
+
+6) Install dependencies
+- `bin/docker/api-server/composer install`
 
 ### Development notes
 - App uses Custom (Base) and GraphQL API, MongoDB and Redis.
