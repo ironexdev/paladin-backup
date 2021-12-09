@@ -1,0 +1,9 @@
+[submodule "docker"]
+	path = docker
+	url = git@github.com:ironexdev/paladin-docker.git
+	branch = master
+
+[submodule "backend"]
+	path = backend
+	url = git@github.com:ironexdev/paladin-backend.git
+	branch = master

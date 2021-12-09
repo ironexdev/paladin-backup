@@ -1,0 +1,19 @@
+#!/bin/sh
+
+while true; do
+    read -p "Do you want to pull docker submodule and add a symlink to it Y/n?" yn
+    case $yn in
+        [Nn]* ) break;;
+        * )
+          set -e
+          git config -f .gitmodules --get-regexp "^submodule\..*\.path$" |
+            while read path_key path
+            do
+                url_key=$(echo $path_key | sed "s/\.path/.url/")
+                url=$(git config -f .gitmodules --get "$url_key")
+                git submodule add $url $path
+            done
+          ln -s $(pwd)/docker/bin $(pwd)/bin/docker;
+          break;;
+    esac
+done
