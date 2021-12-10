@@ -19,7 +19,7 @@ This project is Work in Progress
 - `bin/docker/compose/secrets`
 - This command will complain "No such file or directory", but files with secrets should be created anyway.
 
-5Start Docker
+5) Start Docker
 - `bin/docker/compose/up`
 
 6) Install dependencies
